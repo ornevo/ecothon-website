@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="h-full" style="direction: rtl !important;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black h-full grid grid-cols-[auto_1fr]">
+    <!-- Signup sidebar -->
+    <div class="bg-slate-200 h-full p-10 rtl">
+        <h1 class="text-xl text-center mb-4">הרשמה</h1>
+        <div id="signup-feedback-success" style="display: none;" class="bg-green-600 mb-2 rounded text-sm text-white p-2 text-center">ההרשמה הושלמה, נתראה!</div>
+        <div id="signup-feedback-failure" style="display: none;" class="bg-red-600 mb-2 rounded text-sm text-white p-2 text-center"></div>
+        <form method="POST" action="/">
+            <div>
+                <span class="block text-sm font-medium text-slate-700">
+                    <span class="text-red-600">* </span>
+                    שם פרטי
+                </span>
+                <input type="text" name="first_name" class="mt-2 p-2 mb-3 rounded bg-slate-50 focus:bg-white shadow">
+
+                <span class="block text-sm font-medium text-slate-700">
+                    <span class="text-red-600">* </span>    
+                    שם משפחה
+                </span>
+                <input type="text" name="last_name" class="mt-2 p-2 mb-3 rounded bg-slate-50 focus:bg-white shadow">
+
+                <span class="block text-sm font-medium text-slate-700">
+                    <span class="text-red-600">* </span>    
+                    טלפון
+                </span>
+                <input type="phone" name="phone" class="mt-2 p-2 mb-3 rounded bg-slate-50 focus:bg-white shadow">
+
+                <span class="block text-sm font-medium text-slate-700">
+                    <span class="text-red-600">* </span>
+                    מייל נס-הרים
+                </span>
+                <input type="email" name="email" class="mt-2 p-2 mb-3 rounded bg-slate-50 focus:bg-white shadow">
+
+                <span class="block text-sm font-medium text-slate-700">
+                    <span class="text-red-600">* </span>
+                    תעודת זהות
+                </span>
+                <span class="block text-sm font-sm text-slate-500">לאישורי כניסה לאירוע</span>
+                <input type="text" name="id" class="mt-2 p-2 mb-3 rounded bg-slate-50 focus:bg-white shadow">
+
+                <span class="block text-sm font-medium text-slate-700">יכולות רלוונטיות</span>
+                <span class="block text-sm font-sm text-slate-500">ידע רלוונטי, תכנות, לא חובה</span>
+                <input type="text" name="capab" class="mt-2 p-2 mb-3 rounded bg-slate-50 focus:bg-white shadow">
+
+
+                <span class="block text-sm font-medium text-slate-700">העדפת מזון</span>
+                <span class="block text-sm font-sm text-slate-500">צמחונות, טבעונות, צליאק, אלרגיות...</span>
+                <input type="text" name="food" class="mt-2 p-2 mb-3 rounded bg-slate-50 focus:bg-white shadow">
+
+                <button type="submit" class="block mx-auto my-0 mt-4 bg-[#324149] text-white py-2 px-3 rounded-2xl shadow">
+                    תרשום אותי!
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Content div -->
+    <div ></div>
+    
+    <input id="submit-status" style="display: none" value="<%= submitStatus %>">
+    <script>
+        window.onload = function() {
+            var submitStatus = document.getElementById("submit-status").value;
+            if(submitStatus === "success")
+                document.getElementById("signup-feedback-success").style.display = "block";
+            else if(submitStatus !== undefined && submitStatus !== "") {
+                document.getElementById("signup-feedback-failure").style.display = "block";
+                document.getElementById("signup-feedback-failure").innerHTML = submitStatus;
+            }
+        }
+    </script>
+</body>
+</html>
