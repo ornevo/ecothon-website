@@ -3,11 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/mini-logo.ico">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+       @font-face {
+            font-family: regfont;
+            src: url(/fonts/Heebo/Heebo-Regular.ttf);
+        } 
+
+        @font-face {
+            font-family: regfontbold;
+            src: url(/fonts/Heebo/Heebo-bold.ttf);
+        } 
+        
+        p {
+            font-family: regfont, Arial, Helvetica, sans-serif;
+            color: #131f25;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: regfontbold, Arial, Helvetica, sans-serif;
+            color: #131f25;
+
+        }
+  </style>
 </head>
 <body class="bg-black h-full grid grid-cols-[auto_1fr]">
     <!-- Signup sidebar -->
-    <div class="bg-slate-200 h-full p-10 rtl">
+    <div class="bg-slate-200 h-full p-10 rtl drop-shadow-lg">
         <h1 class="text-xl text-center mb-4">הרשמה</h1>
         <div id="signup-feedback-success" style="display: none;" class="bg-green-600 mb-2 rounded text-sm text-white p-2 text-center">ההרשמה הושלמה, נתראה!</div>
         <div id="signup-feedback-failure" style="display: none;" class="bg-red-600 mb-2 rounded text-sm text-white p-2 text-center"></div>
@@ -61,7 +84,57 @@
     </div>
 
     <!-- Content div -->
-    <div ></div>
+    <div class="bg-[#6be4c7]">
+        <!-- logo -->
+        <div class="p-10 container">
+            <img src="/logo.png" class="w-[38rem] m-[0_auto]">
+            <p class="mt-10 text-lg text-center">
+                אנחנו חיים בזמן קריטי: ההשפעות של ההתחממות הגלובלית הרסניות, וההערכות הן שיש לנו רק עד 2030 ליצור שינוי משמעותי שימנע את התרחישים הגרועים ביותר. 
+                חלק גדול מהשינויים שצריכים להעשות תלויים בפריצות דרך מדעיות וטכנולוגיות, על מנת להבין את הבעיה טוב יותר ובשביל ליצור לה פתרונות חדשניים.
+                <br>
+                אנחנו מתגייסים לעזור.
+                <br>
+                במשך חודש וחצי קבוצות של חיילים מהיחידה ישתפו פעולה עם גופים אזרחיים (משרדי ממשלה, עמותות ומכוני מחקר) שחסר להם כוח אדם טכנולוגי, ויפתחו ביחד פרויקטים שעוסקים בפתרונות למשבר האקלים.   
+                <br>
+            </p>
+
+            <p class="mt-3 text-lg text-center">
+                <b>הסתקרנתם? הרשמו ובואו למפגש הפתיחה!</b>
+            </p>
+
+            <div class="grid grid-cols-3 gap-6 mt-8"> 
+                <div>
+                    <img src="/map.png" class="w-14 m-[0_auto]">
+                    <p class="text-lg text-center mt-2">
+                        נפגש בימי שני* בערב במתחם העבודה שבמרינה הרצליה שהתנדבו לארח אותנו. שם נפגש עם המנטורים הטכנולוגים ואנשי המקצוע מטעם הגופים השותפים                    
+                    </p>
+                </div>
+                <div>
+                    <img src="/open-book.png" class="w-14 m-[0_auto]">
+                    <p class="text-lg text-center mt-2">
+                        במהלך החודש וחצי עבודה נעבור הרצאות העשרה בנושאי אקלים, טכנולוגיה ומה שביניהם ממרצים מובילים בתחום
+                    </p>
+                </div>
+                <div>
+                    <img src="/win.png" class="w-14 m-[0_auto]">
+                    <p class="text-lg text-center mt-2">
+                        את ההאקתון נחתום באירוע שיא מטורף שימשך יומיים**
+                    </p>
+                </div>
+            </div>
+
+            <!-- disclaimers -->
+            <div>
+                <p class="mt-10 text-sm text-grey-500">
+* מי שלא פנוי בימי שני, מוזמן להגיע למתחם בימים אחרים כולל סופי שבוע. אנשי הבסיסים הפרוסים יוכלו לעבוד בקבוצות מתוך הבסיס.
+<br>
+** לא נחשב כימי חופשה
+<br>
+*** הרשמה להאקתון דורשת התחייבות למינימום של 20 שעות עבודה במהלך החודש וחצי שיקדם לו. 
+                </p>
+            </div>
+        </div>
+    </div>
     
     <input id="submit-status" style="display: none" value="<%= submitStatus %>">
     <script>
