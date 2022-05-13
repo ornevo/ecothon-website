@@ -94,6 +94,18 @@ app.get('/', function (req, res) {
   res.render('index.html', { submitStatus: undefined });
 });
 
+app.get('/results', function (req, res) {
+  if (!db) {
+    initDb(function(err){});
+  }
+  if (db) {
+    var col = db.collection('signups').find({}).toArray(function (err, docs) { 
+      if (err) return res.status(500).send({error: err})
+      res.send(docs)
+    });
+  }
+});
+
 app.post('/', function (req, res) {
   var {
     first_name,
