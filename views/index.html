@@ -26,12 +26,9 @@
             color: #131f25;
         }
 
-        #earth-cont {
-            background-image: url(/back.png);
-            background-size: auto 400px;
-            height: 400px;
-            background-attachment: fixed;
-            background-position: top right;
+        #earth {
+            width: 75%;
+            max-width: 500px;
         }
   </style>
 </head>
@@ -91,12 +88,8 @@
     </div>
 
     <!-- Content div -->
-    <div class="bg-[#6be4c7]">
+    <div class="bg-[#6be4c7] grid grid-rows-[1fr_auto]">
         <!-- logo -->
-        <div id="earth-cont">
-            <div id="earth"></div>
-        </div>
-
         <div class="p-10 container m-[0_auto]">
             <img src="/logo.png" class="w-[38rem] m-[0_auto]">
             <p class="mt-10 text-lg text-center">
@@ -145,6 +138,7 @@
                 </p>
             </div>
         </div>
+        <img id="earth" class="m-[0_auto] mt-3" src="/earth-sliced.png" />
     </div>
     
     <input id="submit-status" style="display: none" value="<%= submitStatus %>">
